@@ -8,15 +8,19 @@ buttons.forEach(button =>{
 
         console.log(card_body.classList.contains('show'));
         if(!card_body.classList.contains('show')){
-        
             image.classList.add('rotate');
             button.classList.add('bold');
         }
-        else if(card_body.classList.contains('show')){
+
+        document.querySelectorAll('button').forEach(btn =>{
+            const card = btn.parentNode;
+            const image = btn.querySelector('img');
+            const card_body = card.querySelector('.collapse');
+
+            if(card_body.classList.contains('show')){
             image.classList.remove('rotate');
-            button.classList.remove('bold');
+            btn.classList.remove('bold');
         }
+        })
     });
 });
-
-
